@@ -37,11 +37,6 @@ class IndexController extends \ControllerBase
         );
     }
 
-    public function donateAction()
-    {
-        $this->tag->setTitle('Donate');
-    }
-
     /**
      * Redirects for old links
      */
@@ -74,10 +69,5 @@ class IndexController extends \ControllerBase
     public function redirectDownloadWindowsAction()
     {
         return $this->response->redirect("en/download/windows", 301);
-    }
-
-    public function redirectDonateAction()
-    {
-        return $this->response->redirect('en/donate', 301);
     }
 }

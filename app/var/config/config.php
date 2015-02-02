@@ -106,16 +106,6 @@
             'name'   => 'documentation',
         ),
 
-        // Donate
-        '/donate' => array(
-            'params' => array(
-                'controller' => 'index',
-                'action'     => 'redirectDonate',
-            ),
-            'name'   => 'donate-redirect',
-        ),
-
-
         // Index
         '/{language:[a-z]{2}}' => array(
             'params' => array(
