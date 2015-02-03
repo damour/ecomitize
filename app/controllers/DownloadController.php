@@ -31,10 +31,8 @@ class DownloadController extends \ControllerBase
             
         $this->view->setVar('location', $this->config->location->location);
         $this->view->setVar('googleApiKey', $this->config->location->googleApiKey);
-        
-        $this->view->pick('download/location');
     }
-    
+
     public function windowsAction()
     {
 
