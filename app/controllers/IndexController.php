@@ -70,4 +70,9 @@ class IndexController extends \ControllerBase
     {
         return $this->response->redirect("en/download/windows", 301);
     }
+
+    public function redirectDownloadLocationAction()
+    {
+        return $this->response->redirect("/en/download/location", 301);
+    }
 }

@@ -19,6 +19,11 @@
         'debug'          => '1',
     );
 
+    $location = array(
+        'googleApiKey'   => 'AIzaSyCK-IiCSldYpCvxloNEZXXRXQrp-QoSII0',
+        'location'       => 'станция Святошин, Киев, город Киев, Украина'        
+    );
+
     $cache = array(
         'lifetime' => 86400 ,
         'cacheDir' => ROOT_PATH . '/app/var/cache/' ,
@@ -74,6 +79,13 @@
                 'action'     => 'redirectDownload'
             ),
             'name'   => 'download-redirect',
+        ),
+        '/download/location' => array(
+            'params' => array(
+                'controller' => 'index',
+                'action'     => 'redirectDownloadLocation'
+            ),
+            'name'   => 'download-location-redirect',
         ),
         '/download/{type:(tools|stubs)}' => array(
             'params' => array(
@@ -137,6 +149,13 @@
                 'controller' => 'download'
             ),
             'name'   => 'download',
+        ),
+        '/{language:[a-z]{2}}/download/location' => array(
+            'params' => array(
+                'controller' => 'download',
+                'action'     => 'location'
+            ),
+            'name'   => 'download-location',
         ),
         '/{language:[a-z]{2}}/download/{type:(tools|stubs)}' => array(
             'params' => array(
@@ -235,4 +254,5 @@ return array(
     'routes'      => $routes,
     'languages'   => $languages,
     'pages'       => $pages,
+    'location'       => $location,
 );
