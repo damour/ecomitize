@@ -169,15 +169,6 @@
             'name'   => 'documentation',
         ),
 
-        // Donate
-        '/{language:[a-z]{2}}/donate' => array(
-            'params' => array(
-                'controller' => 'index',
-                'action'     => 'donate',
-            ),
-            'name'   => 'donate',
-        ),
-
         //Humans
         '/humans.txt' => array(
             'params' => array(
@@ -228,7 +219,6 @@
         '',
         'download',
         'support',
-        'donate',
         'hosting',
         'team',
         'about',
