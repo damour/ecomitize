@@ -1,6 +1,6 @@
 <div class="header-line">
     <div class="size-wrap">
-        <h1 class="header-line-title title-white">Phalcon IDE Stubs</h1>
+        <h1 class="header-line-title title-white">Location</h1>
     </div>
 </div>
 
@@ -12,6 +12,7 @@
         <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'vagrant', 'language': language]) }}"><span class="span-ul">Vagrant</span></a></li>
         <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'stubs', 'language': language]) }}"><span class="span-ul">{{ tr('download_ide_stubs') }}</span></a></li>
         <li><a class="tab-link active" href="{{ url(['for': 'download-location', 'language': language]) }}"><span class="span-ul">{{ tr('download_location') }}</span></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-test', 'language': language]) }}"><span class="span-ul">{{ tr('download_test') }}</span></a></li>
     </ul>
 
     <div align="center">
