@@ -13,6 +13,7 @@
         <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'vagrant', 'language': language]) }}"><span class="span-ul">Vagrant</span></a></li>
         <li><a class="tab-link" href="{{ url(['for': 'download-type', 'type': 'stubs', 'language': language]) }}"><span class="span-ul">{{ tr('download_ide_stubs') }}</span></a></li>
         <li><a class="tab-link" href="{{ url(['for': 'download-location', 'language': language]) }}"><span class="span-ul">{{ tr('download_location') }}</span></a></li>
+        <li><a class="tab-link" href="{{ url(['for': 'download-test', 'language': language]) }}"><span class="span-ul">{{ tr('download_test') }}</span></a></li>
     </ul>
 
     <div class="note-orange">

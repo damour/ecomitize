@@ -32,5 +32,6 @@
 
 </div>
 <script>hljs.initHighlightingOnLoad();</script>
+{{ this.assets.outputJs() }}
 </body>
 </html>

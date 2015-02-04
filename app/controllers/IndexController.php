@@ -75,4 +75,9 @@ class IndexController extends \ControllerBase
     {
         return $this->response->redirect("/en/download/location", 301);
     }
+    
+    public function redirectDownloadTestAction()
+    {
+        return $this->response->redirect("/en/download/test", 301);
+    }
 }

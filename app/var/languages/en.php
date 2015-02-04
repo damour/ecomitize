@@ -141,6 +141,7 @@
         'download_devtools_composer_4'    => 'Create a symbolic link to the phalcon.php script:',
         'download_devtools_download'      => 'You can download or clone a cross platform package containing the developer tools from <a href=":1:">Github</a>.',
 
+        'download_test'                   => 'Test',
         'download_location'               => 'Location',
         'download_vagrant'                => 'Vagrant',
         'download_vagrant_boxes'          => 'Vagrant Boxes',

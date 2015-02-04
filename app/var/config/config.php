@@ -80,6 +80,13 @@
             ),
             'name'   => 'download-redirect',
         ),
+        '/download/test' => array(
+            'params' => array(
+                'controller' => 'index',
+                'action'     => 'redirectDownloadTest'
+            ),
+            'name'   => 'download-location-test',
+        ),
         '/download/location' => array(
             'params' => array(
                 'controller' => 'index',
@@ -149,6 +156,27 @@
                 'controller' => 'download'
             ),
             'name'   => 'download',
+        ),
+        '/{language:[a-z]{2}}/download/test' => array(
+            'params' => array(
+                'controller' => 'download',
+                'action'     => 'test'
+            ),
+            'name'   => 'download-test',
+        ),
+        '/download/addEmail' => array(
+            'params' => array(
+                'controller' => 'download',
+                'action'     => 'addEmail'
+            ),
+            'name'   => 'download-addEmail',
+        ),
+        '/download/getLastEmails' => array(
+            'params' => array(
+                'controller' => 'download',
+                'action'     => 'getLastEmails'
+            ),
+            'name'   => 'download-getLastEmails',
         ),
         '/{language:[a-z]{2}}/download/location' => array(
             'params' => array(

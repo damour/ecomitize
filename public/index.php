@@ -10,13 +10,16 @@ if (!defined('ROOT_PATH')) {
 }
 
 try {
-
+    include ROOT_PATH . '/app/var/config/loader.php';
 	include ROOT_PATH . "/app/var/bootstrap.php";
 
 	/**
 	 * Handle the request
 	 */
     $di  = new PhDi();
+
+    include ROOT_PATH . '/app/var/config/services.php';
+
     $app = new Bootstrap($di);
 
     echo $app->run(array());

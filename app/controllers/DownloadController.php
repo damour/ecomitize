@@ -1,5 +1,8 @@
 <?php
 
+use Phalcon\Forms\Form;
+use Phalcon\Forms\Element\Text;
+
 class DownloadController extends \ControllerBase
 {
     public function indexAction()
@@ -31,6 +34,59 @@ class DownloadController extends \ControllerBase
             
         $this->view->setVar('location', $this->config->location->location);
         $this->view->setVar('googleApiKey', $this->config->location->googleApiKey);
+    }
+    
+    public function addEmailAction()
+    {
+        if (!$this->request->isPost() && !$this->request->isAjax()) {
+            return $this->response->redirect('download/test');
+        }
+
+        $this->view->disable();
+
+        $response = new \Phalcon\Http\Response();
+        $response->setContentType('application/json', 'UTF-8');
+
+        $email = new Emails();
+        $email->email = (new Phalcon\Filter())->sanitize($this->request->getPost("email"), "email");
+            
+        if ($email->save() == false) {
+            $firstError = $email->getMessages()[0];
+            $response->setJsonContent(['status' => 'error', 'error' => $firstError->getMessage()]);
+        } else {
+            $response->setJsonContent(['status' => 'success']);    
+        }
+        
+        return $response;
+    }
+
+    public function getLastEmailsAction()
+    {
+        if ($this->request->isAjax() == false) {
+            return $this->response->redirect('download/test');
+        }
+
+        $this->view->setRenderLevel(\Phalcon\Mvc\View::LEVEL_ACTION_VIEW);
+
+        $this->view->setVar('lastEmails', Emails::getLastEmails());
+
+        $this->view->pick("download/lastEmails");
+    }
+
+    public function testAction()
+    {
+        $this->tag->setTitle('Test');
+
+        $form = new Form(new Emails());
+        $email = new Text("email");
+        $email->setLabel('Email');
+        $form->add($email);
+
+        $this->assets->addJs('js/jquery-1.11.2.min.js');
+        $this->assets->addJs('js/email.js');
+            
+        $this->view->setVar('form', $form);
+        $this->view->setVar('lastEmails', Emails::getLastEmails());
     }
 
     public function windowsAction()
